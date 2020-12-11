@@ -90,3 +90,7 @@
 .register-heading{
     color: #495057;
 }
+
+a.brand-link {
+    padding-left: 65px;
+}

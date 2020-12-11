@@ -2,12 +2,6 @@
 @section('content')
 <div class="row">
 	<div class="col-md-12">
-		<h2>Welcome to Admin Panel</h2>
-	</div>
-</div>
-
-<div class="row">
-	<div class="col-md-12">
 		<h3>List of appications</h3>
 		<table class="table">
 			<thead>
@@ -17,6 +11,7 @@
 					<th>Duration</th>
 					<th>Rate</th>
 					<th>Status</th>
+					<th>Action</th>
 				</tr>
 			</thead>
 			<tbody>

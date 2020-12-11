@@ -7,7 +7,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Shadhin EMI Generator | Admin</title>
+	<title>Shadhin EMI Generator | User Dashboard</title>
 
 	<!-- Google Font: Source Sans Pro -->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -60,7 +60,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 	<aside class="main-sidebar sidebar-dark-primary elevation-4">
 		<!-- Brand Logo -->
 		<a href="index3.html" class="brand-link">
-			<span class="brand-text font-weight-light">Admin Panel</span>
+			<span class="brand-text font-weight-light">User Dashboard</span>
 		</a>
 
 		<!-- Sidebar -->
@@ -71,7 +71,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 					<img src="{{asset('admin-assets')}}/dist/img/AdminLTELogo.png" class="img-circle elevation-2" alt="User Image">
 				</div>
 				<div class="info">
-					<a href="#" class="d-block">System Admin</a>
+					<a href="#" class="d-block">User</a>
 				</div>
 			</div>
 
@@ -83,7 +83,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 					<!-- Add icons to the links using the .nav-icon class
 							 with font-awesome or any other icon font library -->
 					<li class="nav-item menu-open">
-						<a href="#" class="nav-link active">
+						<a href="{{ route('user.index') }}" class="nav-link active">
 							<i class="nav-icon fas fa-tachometer-alt"></i>
 							<p>Dashboard</p>
 						</a>						
@@ -102,12 +102,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
 			<div class="container-fluid">
 				<div class="row mb-2">
 					<div class="col-sm-6">
-						<h1 class="m-0">Admin Panel</h1>
+						<h1 class="m-0">User Dashboard</h1>
 					</div><!-- /.col -->
 					<div class="col-sm-6">
 						<ol class="breadcrumb float-sm-right">
-							<li class="breadcrumb-item"><a href="#">Home</a></li>
-							<li class="breadcrumb-item active">Application List</li>
+							<li class="breadcrumb-item"><a href="{{ route('user.index') }}">Home</a></li>
 						</ol>
 					</div><!-- /.col -->
 				</div><!-- /.row -->

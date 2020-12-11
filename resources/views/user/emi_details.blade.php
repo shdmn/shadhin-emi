@@ -1,4 +1,4 @@
-@extends('front_layout')
+@extends('user_layout')
 @section('content')
 <div class="row">
     <div class="col-md-12">
@@ -37,6 +37,9 @@
                 @endfor
             </tbody>
         </table>
+    </div>
+    <div class="col-md-12">
+        <p><a href="{{ route('user.index') }}" class="btn btn-success" title="Back">Back</a></p>
     </div>
 </div>
 @endsection
