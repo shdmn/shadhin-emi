@@ -6,21 +6,22 @@
 	</div>
 </div>
 
-<div class="row">
-	<div class="col-md-12">
+<div class="row" style="margin-top: 50px;">
+	<div class="col-md-6">
 		<h3>Apply for Loan</h3>
+		<p>To apply please provide amount, number of months (duration) and interest rate below.</p>
 		<form action="{{ route('user.apply') }}" method="post">
 			@csrf
 	        <div class="form-group">
-	            <input type="number" name="amount" class="form-control" placeholder="Amount" value="" />
+	            <input type="number" name="amount" class="form-control" placeholder="Amount" value="" required="required" />
 	        </div>
 	        <div class="form-group">
-	            <input type="number" name="duration" class="form-control" placeholder="Duration in months" value="" />
+	            <input type="number" name="duration" class="form-control" placeholder="Duration in months" value="" required="required" />
 	        </div>
 	        <div class="form-group">
-	            <input type="text" name="rate" class="form-control" placeholder="Interest Rate" value="" />
+	            <input type="text" name="rate" class="form-control" placeholder="Interest Rate" value="" required="required" />
 	        </div>
-	        <input type="submit" class="btn"  value="Apply"/>
+	        <input type="submit" class="btn btn-info"  value="Apply for Loan"/>
 	        @if(\Session::has('success'))
 		        <p class="text-success">{{session('success')}}</p>
 		        	@endif
@@ -30,9 +31,9 @@
 	    </form>
 	</div>
 </div>
-<div class="row">
+<div class="row" style="margin-top: 75px;">
 	<div class="col-md-12">
-		<h3>List of appications</h3>
+		<h3>List of Appications</h3>
 		<table class="table">
 			<thead>
 				<tr>
@@ -62,7 +63,7 @@
 						@if($apply->status == 0)
 							
 						@elseif($apply->status == 1)
-							<a class="btn btn-info" href="{{route('apply.details',$apply->id)}}"> Emi Details</a>
+							<a class="btn btn-info" href="{{route('apply.details',$apply->id)}}"> EMI Details</a>
 						@else
 							
 						@endif

@@ -4,12 +4,9 @@
     <div class="col-md-12">
         <h2>EMI Details</h2>
     </div>
-
 </div>
-
 <div class="row">
     <div class="col-md-12">
-        <h3>List of appications</h3>
         <table class="table">
             <thead>
                 <tr>

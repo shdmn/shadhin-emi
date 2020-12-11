@@ -23,7 +23,8 @@ class UserController extends Controller
     	$user->email = $request->email;
     	$user->password = Hash::make($request->password);
     	$user->save();
-    	// return redirect()->back()->with('success','Successfully saved');
+    	
+    	return redirect()->back()->with('success','Successfully saved');
     }
 
     public function login( Request $request ){
@@ -68,7 +69,7 @@ class UserController extends Controller
     		return redirect()->back()->with('error_apply','Something went wrong. Please review your application.');
     	}    	
     }
-    
+
     public function emi_details($apply_id){
     	$apply = \App\LoanApply::find($apply_id);
     	return view('user.emi_details',compact('apply'));

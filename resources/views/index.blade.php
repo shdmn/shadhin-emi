@@ -5,18 +5,10 @@
         <div class="col-md-3 register-left">
             <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/>
             <h3>Welcome</h3>
-            <p>You are 30 seconds away from earning your own money!</p>
-            <input type="submit" name="" value="Login"/><br/>
+            <p><strong>Register first to apply for loan</strong></p>
+            <p>Please login if you already have an account</p>
         </div>
         <div class="col-md-9 register-right">
-            <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
-                <li class="nav-item">
-                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Employee</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Hirer</a>
-                </li>
-            </ul>
             <div class="tab-content" id="myTabContent">
                 <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                     <div class="row register-form">
@@ -25,15 +17,18 @@
                         	<form action="{{route('user.registration')}}" method="post">
             					@csrf
 	                            <div class="form-group">
-	                                <input type="text" name="name" class="form-control" placeholder="Name *" value="" />
+	                                <input type="text" name="name" class="form-control" placeholder="Name *" value="" required="required" />
 	                            </div>
 	                            <div class="form-group">
-	                                <input type="email" name="email" class="form-control" placeholder="Email *" value="" />
+	                                <input type="email" name="email" class="form-control" placeholder="Email *" value="" required="required" />
 	                            </div>
 	                            <div class="form-group">
-	                                <input type="password" name="password" class="form-control" placeholder="Password *" value="" />
+	                                <input type="password" name="password" class="form-control" placeholder="Password *" value="" required="required" />
 	                            </div>
 	                            <input type="submit" class="btnRegister"  value="Register"/>
+                                @if(\Session::has('success'))
+                                    <p class="text-success">{{ session('success') }}</p>
+                                @endif
 	                        </form>
                         </div>
                         <div class="col-md-6">
@@ -42,10 +37,10 @@
             					@csrf
 	                        	<br>
 	                           	<div class="form-group">
-	                                <input type="email" name="email" class="form-control" placeholder="Email *" value="" />
+	                                <input type="email" name="email" class="form-control" placeholder="Email *" value="" required="required" />
 	                            </div>
 	                            <div class="form-group">
-	                                <input type="password" name="password" class="form-control" placeholder="Password *" value="" />
+	                                <input type="password" name="password" class="form-control" placeholder="Password *" value="" required="required" />
 	                            </div>
 	                            
 	                            <input type="submit" class="btnRegister"  value="Login"/>

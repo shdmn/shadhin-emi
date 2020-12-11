@@ -37,7 +37,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 		<ul class="navbar-nav ml-auto">
 			<li class="nav-item dropdown">          
 					@if(\Auth::check())
-						<a class="dropdown-item" href="{{ route('logout') }}"
+						<a class="btn btn-danger" href="{{ route('logout') }}"
 							onclick="event.preventDefault();
 								document.getElementById('logout-form').submit();">
 							{{ __('Logout') }}
@@ -59,7 +59,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 	<!-- Main Sidebar Container -->
 	<aside class="main-sidebar sidebar-dark-primary elevation-4">
 		<!-- Brand Logo -->
-		<a href="index3.html" class="brand-link">
+		<a href="{{ route('admin.index') }}" class="brand-link">
 			<span class="brand-text font-weight-light">Admin Panel</span>
 		</a>
 
@@ -71,7 +71,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 					<img src="{{asset('admin-assets')}}/dist/img/AdminLTELogo.png" class="img-circle elevation-2" alt="User Image">
 				</div>
 				<div class="info">
-					<a href="#" class="d-block">System Admin</a>
+					<a href="{{ route('admin.index') }}" class="d-block">System Admin</a>
 				</div>
 			</div>
 
