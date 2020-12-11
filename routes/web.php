@@ -12,13 +12,14 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Auth::routes();
 Route::get('/', 'FrontController@index')->name('home');
 Route::post('/user/registration', 'UserController@store')->name('user.registration');
 Route::post('/user/login', 'UserController@login')->name('user.login');
 Route::prefix('user')->middleware(['auth'])->group(function(){
 	Route::get('/index', 'UserController@index')->name('user.index');
 	Route::post('/application-store', 'UserController@application_store')->name('user.apply');
+	Route::get('/apply/details/{id}', 'UserController@emi_details')->name('apply.details');
 });
 
 Route::prefix('admin')->middleware(['admin_auth'])->group(function(){
@@ -26,3 +27,7 @@ Route::prefix('admin')->middleware(['admin_auth'])->group(function(){
 	Route::get('/moderate/application/{user}/{status}', 'AdminController@modarate_application')->name('moderate.application');	
 });
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

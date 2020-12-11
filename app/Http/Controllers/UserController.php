@@ -68,4 +68,9 @@ class UserController extends Controller
     		return redirect()->back()->with('error_apply','Something went wrong. Please review your application.');
     	}    	
     }
+    
+    public function emi_details($apply_id){
+    	$apply = \App\LoanApply::find($apply_id);
+    	return view('user.emi_details',compact('apply'));
+    }
 }

@@ -11,5 +11,22 @@
     <div class="container">
         @yield('content')
     </div>
+    <div class="container">
+        <div  class="row">
+            <div class="col-md-12">
+                @if(\Auth::check())
+                <a class="dropdown-item" href="{{ route('logout') }}"
+                    onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();">
+                    {{ __('Logout') }}
+                </a>
+                @endif
+            </div>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+            </form>            
+        </div>
+    </div>
+
 </body>
 </html>
